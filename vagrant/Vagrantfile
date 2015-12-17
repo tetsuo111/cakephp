@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos64_ja"
   config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-x86_64-v20140110.box"
-  config.vm.hostname = "lamp-sample"
+  config.vm.hostname = "cakephp"
 
   config.vm.network :private_network, ip: "192.168.33.40"
   #config.vm.synced_folder "../", "/share", :nfs => true
@@ -16,6 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         mount_options: ['dmode=777,fmode=666']
 
   config.vm.provider :virtualbox do |vb|
+
     vb.name = "lamp-sample"
     vb.gui = true
     #vb.customize ["modifyvm", :id, "--memory", 1024]
